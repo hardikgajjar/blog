@@ -1,0 +1,22 @@
+<h1><%= name %></h1>
+<%= simple_form_for [ :admin , resource ], :html => {:class => "uniform"}  do |f| %>
+  <div>
+    
+    <div id="general">
+      <% attributes.each do |attr| %>
+      <dl class="inline">
+        <dt><%= f.label attr  %></dt>
+        <dd>
+        <%= f.text_field attr  %>
+        </dd>
+      </dl>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="buttons">
+    <%= f.submit "Save", :class => 'button' %>
+    <%= link_to "Back", admin_posts_path, :class => 'button white' %>
+  </div>
+<% end %>

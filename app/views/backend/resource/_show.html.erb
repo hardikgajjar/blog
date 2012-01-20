@@ -1,0 +1,18 @@
+<h1><%= name %> Details</h1>
+<form>
+<div class="topbuttons clearfix">
+<%= link_to 'Edit', edit_path, :class => "button blue", :style => "float:right" %>
+<%= link_to 'Back', back_path, :class => "button blue", :style => "float:right" %>
+</div>
+<div>
+<fieldset>
+  <legend>details</legend>
+  <dl class="inline">
+    <% resource_class.attribute_names.each do |attr| %>
+      <dt><%= label_tag resource_class.human_attribute_name(attr) %></dt>
+      <dd><%= resource.public_send(attr)%></dd>
+    <% end %>
+  </dl>
+</fieldset>
+  </div>
+</form>

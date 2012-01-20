@@ -1,34 +1,6 @@
-<h1>Page Details</h1>
-<form>
-<div class="topbuttons clearfix">
-<%= link_to 'Edit', edit_page_path, :class => "button blue", :style => "float:right" %>
-<%= link_to 'Back', pages_path, :class => "button blue", :style => "float:right" %>
-</div>
-<div>
-<fieldset>
-  <legend>details</legend>
-  <dl class="inline">
-    <dt><%= label_tag :title %></dt>
-    <dd>
-      <%= @page.title %>
-    </dd>
-    <dt><%= label_tag :url %></dt>
-    <dd>
-      <%= @page.slug %>
-    </dd>
-    <dt><%= label_tag :page_title  %></dt>
-    <dd>
-      <%= @page.page_title %>
-    </dd>
-    <dt><%= label_tag :keywords %></dt>
-    <dd>
-      <%= @page.keywords %>
-    </dd>
-    <dt><%= label_tag :description %></dt>
-    <dd>
-      <%= @page.desc %>
-    </dd>
-  </dl>
-</fieldset>
-  </div>
-</form>
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= render "show", attributes: attributes, name: 'Post', edit_path: edit_admin_post_path, back_path: admin_posts_path %>
