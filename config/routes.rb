@@ -7,6 +7,7 @@ Blog::Application.routes.draw do
   namespace :backend do
     devise_for :admins
     #, skip: :registrations
+    match "/products/destroyall" => "products#destroyall", :via => :post
     resources :products
   end
 
