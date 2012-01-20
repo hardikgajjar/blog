@@ -11,7 +11,7 @@ class Backend::ProductsController < Backend::ResourceController
     @product = Product.new(params[:product])
 
     if @product.save
-      redirect_to @product, notice: 'Product was successfully created.'
+      redirect_to backend_products_path, notice: 'Product was successfully created.'
     else
       render action: 'new'
     end
@@ -53,7 +53,7 @@ class Backend::ProductsController < Backend::ResourceController
       end
     end
     #render :text => tmp.inspect
-    redirect_to products_path
+    redirect_to backend_products_path
 
   end
 end
