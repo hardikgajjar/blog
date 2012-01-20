@@ -5,7 +5,8 @@ Blog::Application.routes.draw do
   end
   
   namespace :backend do
-    devise_for :admins, skip: :registrations
+    devise_for :admins
+    #, skip: :registrations
     resources :products
   end
 
