@@ -18,7 +18,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
