@@ -5,7 +5,7 @@ class Backend::ApplicationController < ActionController::Base
   def sa
     @user = current_user
     # raise params.inspect
-    if @user.update_with_password(params[:user])
+    @user.update_with_password(params[:user])
 
   end
 end
