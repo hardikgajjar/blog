@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kids</title>
+    <!--[if lte IE 8]>
+    <%= javascript_include_tag "html5","selectivizr","excanvas.min" %>
+    <![endif]-->
+    <%= stylesheet_link_tag "reset","grid","admin","all_css" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+  <header id="top">
+    <div class="container_12 clearfix">
+      <div id="logo" class="grid_5">
+        <!-- replace with your website title or logo -->
+        <a id="site-title" href="dashboard.html"><span>Kids</span>Campus Admin Panel</a>
+        <a id="view-site" href="#">View Site</a>
+      </div>
+
+      <div class="grid_4" id="colorstyle">
+
+      </div>
+
+      <div id="userinfo" class="grid_3">
+			Welcome, <a href="javascript:void(0)">Admin</a>
+      </div>
+    </div>
+  </header>
+
+  <nav id="topmenu">
+    <div class="container_12 clearfix">
+      <div class="grid_12">
+        <ul id="mainmenu" class="sf-menu">
+          <li id="dashboard">
+            <%= link_to 'Posts', admin_posts_path %>
+          </li>
+        </ul>
+        <ul id="usermenu">
+          <li>
+            <%= link_to 'Logout', "/users/logout" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="content">
+    <section class="container_12 clearfix">
+      <section id="main" class="grid_9 push_3">
+        <article>
+          <% if(notice) %>
+          <div id="flashMessage" class="message"><%= notice %></div>
+          <% end %>
+          <% if(alert) %>
+          <div id="flashMessage" class="error"><%= alert %></div>
+          <% end %>
+          <%= yield %>
+        </article>
+      </section>
+    </section>
+  </section>
+  <footer id="bottom">
+    <section class="container_12 clearfix">
+      <div class="grid_6 alignright">
+			Copyright &copy; 2011 <a href="#">kidscampus.com</a>
+      </div>
+    </section>
+  </footer>
+
+</body>
+</html>
