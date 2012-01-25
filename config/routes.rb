@@ -1,12 +1,12 @@
 Blog::Application.routes.draw do
-  
+  root :to => "posts#index"
   resources :posts do
     resources :comments
   end
   
   namespace :backend do
-    devise_for :admins
-    #, skip: :registrations
+    root :to => "products#index"
+    devise_for :admins, skip: :registrations
     match "/products/destroyall" => "products#destroyall", :via => :post
     resources :products
   end

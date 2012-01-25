@@ -29,7 +29,7 @@ class Backend::ProductsController < Backend::ResourceController
     @product = Product.find(params[:id])
 
     if(@product.update_attributes(params[:product]))
-      redirect_to @product, notice: 'Product was successfully updated.'
+      redirect_to backend_products_path, notice: 'Product was successfully updated.'
     else
       render action: 'edit'
     end
@@ -40,7 +40,7 @@ class Backend::ProductsController < Backend::ResourceController
     @product = Product.find(params[:id])
     @product.destroy
 
-    redirect_to products_path
+    redirect_to backend_products_path
   end
 
   def destroyall
